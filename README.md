@@ -1,0 +1,2 @@
+# AEClient
+Arweave Email Client
