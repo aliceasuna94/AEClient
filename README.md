@@ -9,4 +9,6 @@ ARClient uses the Arweave HTTP API, Arweave JS dan, and is published with Arweav
 
 You can launch a copy by installing Arweave Deploy and running arweave deploy index.html --key-file [PATH_TO_KEY] --package. After the transaction is mined into a block, you will be able to access it at the given TXID, at the Arweave HTTPS gateway.
 
-## Improved Features
+# Improved Features
+
+AEClient was built with the aim of enhancing the user experience, having an intuitive display, both in additional features and in the inbox. This is the advantage of AEClient that can help you work more effectively.
