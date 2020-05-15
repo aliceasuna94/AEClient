@@ -11,4 +11,7 @@ You can launch a copy by installing Arweave Deploy and running arweave deploy in
 
 # Improved Features
 
-AEClient was built with the aim of enhancing the user experience, having an intuitive display, both in additional features and in the inbox. This is the advantage of AEClient that can help you work more effectively.
+AEClient was built with the aim of enhancing the user experience, having an intuitive display, both in additional features and in the inbox. This is the advantage of AEClient that can help you work more effectively. Remember, AEClient does not support other email provider services such as GMAIL, YAHOO, or HOTMAIL. AEClient only works for Weavemail.
+
+1. Improved UI / UX appearance that is better and responsive. You can use this AEClient on Mobile and Desktop devices.
+2. Improved the appearance of the Inbox. We changed the appearance by adding user icons, titles, content, and time. In addition, you can display email content by clicking on the email you want. Then a popup message display will appear.
