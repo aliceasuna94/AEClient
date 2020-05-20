@@ -21,5 +21,9 @@ AEClient was built with the aim of enhancing the user experience, having an intu
 6. Add Contacts feature. To make it easier for users to send email, it will be easier to save contacts in your wallet. You can send emails directly from the selected address in the Contacts menu. User can select multiple contact to send mail.
 7. Adds an Email Search feature to make it easier to find messages from a specific address or Arweave ID. 
 8. Direct add email receiver with url "?=to[address]". ex. ?to=DP7qltVaNbsfBUWV08mZQPyalvdDghgwOJ7ZHli9WLU
+
+# Try Now
+You can use AEClient on link below.
+https://arweave.net/MbdF9ZMxl2YvW660MuXRcjuYqgiVRpaM2XPdkPEWQQ8
 9. Added Outbox. User can show latest email sent. 
 10. Added paginations for Inbox. User can show old inbox by click Show More.
