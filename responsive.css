@@ -1,0 +1,170 @@
+
+@media screen and (max-width: 980px) {
+
+  .sub-home-1 {
+    width: 100%;
+  }
+
+  .sub-home-1-1{
+        font-size: 30pt;
+  }
+  .sub-home-2 {
+      display: none;
+  }
+
+  .menu-icon{
+      display: block;
+  }
+
+  .wrapper .sidebar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#230d66;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .wrapper .main_content {
+    margin-left: 0;
+    }
+
+    .closebtn {
+      display: block;
+    }
+
+    .tab-email {
+      width: calc(100% - 360px);
+    }
+
+    .wrapper .main_content .header {
+        background: #333487;
+        color: white;
+
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 770px) {
+
+  .sub-home-2 {
+      display: none;
+  }
+
+  .sub-home-1 {
+    width: 100%;
+  }
+
+  .ma-2{
+    float:none;
+    width: auto;
+  }
+
+  .ma-3{
+    width: 55%;
+  }
+
+  .ma-4{
+    margin-left: 5px;
+    width: auto;
+    padding: 0px 5px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+
+  }
+
+  .main{
+    width:100%;
+  }
+
+  .menu-icon{
+      display: block;
+  }
+
+  .wrapper .sidebar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #230d66;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .wrapper .main_content {
+    margin-left: 0;
+    }
+
+    .closebtn {
+      display: block;
+    }
+
+    .topnav{
+      width: 245px;
+    }
+
+    .topnav input[type=text]{
+      width: 200px;
+    }
+
+    .tab-email{
+        width: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99999999;
+        font-family: inherit;
+        overflow: scroll;
+        margin: 0;
+        background: #000000b8;
+        padding: none;
+        float:none;
+        display:none;
+    }
+
+    .no-mail-selected {
+      display: none;
+    }
+
+    .tab-email-content{
+        margin: 0;
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .tec-bd {
+
+        overflow: scroll;
+        max-height: 400px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+  .sub-home {
+      margin: 50px auto;
+  }
+
+  .sub-home-1-1 {
+    font-size: 20pt;
+  }
+
+  .sub-home-1-2 {
+    font-size: 11pt;
+  }
+
+}

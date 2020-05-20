@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AEClient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://unpkg.com/arweave/bundles/web.bundle.js"></script>
+    <script src="https://use.fontawesome.com/99afec5325.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://use.fontawesome.com/99afec5325.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+  <div id="login" class="login-page">
+    <div class="header">
+        <p><i class="fa fa-codepen" aria-hidden="true"></i> 	&nbsp;&nbsp; AEClient</i></p>
+    </div>
+    <div class="sub-home" >
+
+        <div class="sub-home-1">
+            <div class="sub-home-1-1">Send your email now and make it permanent with AEClient.</div>
+            <div class="sub-home-1-2">AEClient is a blockchain based email service and run on the Arweave Network. AEClient uses encrypted with the recipients public key using RSA-OAEP.</div>
+
+            <div>
+              <input type="file" accept=".JSON,.json" id="next-wallet" onsubmit="openNextwallet()" style="display: none;"/>
+              <input type="button" class="button-upload" id="file" name="goto" value="Getting Started" onclick="goto()">
+              <a href="https://www.arweave.org/wallet" target="_blank" class="button-upload">Get Free Token</a>
+            </div>
+        </div>
+        <div class="sub-home-2"><img src="img.png" width="300" style="float: right;"></div>
+     </div>
+</div>
+
+  <div class="wrapper" style="display:none" id="wrapper">
+      <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2>AEClient</h2>
+          <ul>
+              <li><a href="javascript:void(0)" onclick="replyMail()"><i class="fa fa-paper-plane-o c-blue" aria-hidden="true"></i><span style="margin-left:15px;">Compose</span></a></li>
+              <li><a href="javascript:void(0)" onclick="closeNav()"><i class="fa fa-inbox c-blue" aria-hidden="true"></i><span style="margin-left:15px;">Inbox</span></a></li>
+              <li><a href="javascript:void(0)" onclick="outbox()"><i class="fa fa-arrow-circle-o-up yellow" aria-hidden="true"></i></i><span style="margin-left:15px;">Outbox</span></a></li>
+              <li><a href="javascript:void(0)" onclick="showContact('menu')"><i class="fa fa-address-book green" aria-hidden="true"></i><span style="margin-left:15px;">Contact</span></a></li>
+              <li><a href="javascript:void(0)" onclick="account()"><i class="fa fa-user-circle" aria-hidden="true"></i><span style="margin-left:15px;">My Account</span></a></li>
+              <li><a href="javascript:void(0)" onclick="about()"><i class="fa fa-info-circle" aria-hidden="true"></i><span style="margin-left:15px;">About</span></a></li>
+              <li><a href="javascript:void(0)" onclick="logout()"><i class="fa fa-times-circle lg" aria-hidden="true"></i><span style="margin-left:15px;">Logout</span></a></li>
+
+
+          </ul>
+
+      </div>
+      <div class="main_content">
+          <div class="header">
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+
+
+              <div class="search-container">
+                <div class="topnav">
+                <div class="search-container">
+                    <input type="text" placeholder="Search mail by wallet address" name="search" id="search-input" onchange="inboxShow()">
+                    <button type="submit" onclick="inboxShow()"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-email" id="tab-email">
+              <div class="tab-email-content" id="tab-email-content" hidden>
+                  <div class="tec-1" ><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp;&nbsp;Transaction:&nbsp;<a href="/" id="tx-trx"></a></div>
+                  <div class="tec-2">
+                      <div class="tec-2-a" ><i class="fa fa-bookmark" aria-hidden="true"></i>&nbsp;&nbsp;<span id="tx-sb" style="word-break: break-all;"></span></div>
+                      <div class="tec-aa">
+                          <div class="circle-a" id="tx-ic" style="float:left;margin-right:10px;"></div>
+                          <div class="tec-bb">From: <a href="/" id="tx-fr"></a></div><br/>
+
+                      </div>
+                      <div class="tec-bd"><xmp id="tx-bd"></xmp></div>
+                  </div>
+
+                  <div class="tec-c">
+                      <div>
+                          <button class="btn-reply" onclick="replyMail(this.value, 'reply')" id="rep" value=""><i class="fa fa-reply" aria-hidden="true"></i><span style="margin-left:10px;">Reply</span></button>
+                          <button class="btn-reply" onclick="closeMailContent()"><i class="fa fa-times" aria-hidden="true"></i><span style="margin-left:10px;">Close</span></button>
+                          <div class="tec-date" ><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span id="tx-dt"></span></div>
+                          <div class="tec-date" ><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span id="tx-ar"></span> AR&nbsp;&nbsp;</div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="no-mail-selected" id="no-mail-selected"><p style="font-size:40px;"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></p><p >No email selected.</p></div>
+          </div>
+
+        <div class="main">
+              <div style="margin-bottom:20px;">
+
+                  <h1 class="sub-title" id="inbox-title">Inbox</h1>
+                  <div id="inbox"></div>
+                  <div id="aaa"><div class="loader-a"></div></div>
+                  <div id="showmore" class="showmore" hidden><a href="javascript:void(0)" onclick="getInboxList('showmore')">Show More</a></div>
+
+
+              </div>
+
+
+
+                <div id="about" hidden>
+                    <h1 class="sub-title">About</h1>
+                    <div style="padding:25px;color:#535353;">
+                    <h2 style="text-align: justify;">AEClient</h2><br/>
+                    <p style="text-align: justify;">ARClient is a permaweb that is used to send and receive email through the Arweave network. By using an email client, you will be easier to manage email. ARClient was built based on the Arweave Blockchain and was developed by Aliceasua94 from an existing permaweb, Weavemail. You can see Weavemail on <a href="https://github.com/ArweaveTeam/weavemail">https://github.com/ArweaveTeam/weavemail</a></p><br/>
+                    <h2 style="text-align: justify;">How was it built?</h2><br/>
+                    <p style="text-align: justify;">ARClient uses the Arweave HTTP API, Arweave JS dan, and is published with Arweave Deploy. You can launch a copy by installing Arweave Deploy and running arweave deploy index.html --key-file [PATH_TO_KEY] --package. After the transaction is mined into a block, you will be able to access it at the given TXID, at the Arweave HTTPS gateway.</p><br/>
+                    <h2 style="text-align: justify;">Improved Features</h2><br/>
+                    <p style="text-align: justify;">AEClient was built with the aim of enhancing the user experience, having an intuitive display, both in additional features and in the inbox. This is the advantage of AEClient that can help you work more effectively. Remember, AEClient does not support other email provider services such as GMAIL, YAHOO, or HOTMAIL. AEClient only works for Weavemail.</p><br/><br/>
+                    <p>1. Improved UI / UX appearance that is better and responsive. You can use this AEClient on Mobile and Desktop devices.<br/><br/>
+                    2. Improved the appearance of the Inbox. We changed the appearance by adding user icons, titles, content, and time. In addition, you can display email content by clicking on the email you want. Then a popup message display will appear.<br/><br/>
+                    3. Improved features in the Compose menu. You can send email to several Addresses at the same time (Multi Send). As for some additional validations for the address, the number of ar, and the content.<br/><br/>
+                    4. Sorting content based on the latest time. Some problems that sometimes arise are the data does not appear according to the date the email was sent, but we have fixed it.<br/><br/>
+                    5. Fee validation. You can see the total cost you must spend before you send an email. Of course, if your AR balance is insufficient, emails will not be sent.<br/><br/>
+                    6. Add Contacts feature. To make it easier for users to send email, it will be easier to save contacts in your wallet. You can send emails directly from the selected address in the Contacts menu.<br/><br/>
+                    7. Adds an Email Search feature to make it easier to find messages from a specific address. This is very useful if you have a lot of Inboxes.</p><br/>
+                  </div>
+                </div>
+        </div>
+
+
+
+      </div>
+
+</div>
+
+<div class="loading" id="full-loading" hidden>Loading&#8230;</div>
+</body>
+
+</html>
